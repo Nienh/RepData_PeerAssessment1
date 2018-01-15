@@ -157,7 +157,7 @@ ave_per_int.day <- summarize(group_by(activity_impute,interval,day),ave_steps = 
 
 ##Graph average steps by interval, Weekday vs Weekend, time series
 q <- ggplot(ave_per_int.day,aes(interval, ave_steps))
-q + facet_grid(~day) +  geom_line(aes(color=day), size = 1, show.legend = F) + labs(title = "Average Steps by Interval, Weekday vs Weekend") + theme_light()
+q + facet_grid(day~.) +  geom_line(aes(color=day), size = 1, show.legend = F) + labs(title = "Average Steps by Interval, Weekday vs Weekend", xlab= "Number of Steps") + theme_light()
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-12-1.png)<!-- -->
